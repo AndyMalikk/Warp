@@ -2,17 +2,19 @@ import React from "react";
 import { useEffect } from "react";
 
 const Filter = ({ setActiveType, activeType, setFiltered, portfolioWebsites }) => {
+  /*if active type is 0 (all) then setFiltered as portfolioWebsites (all websites) */
   useEffect(() => {
     if (activeType === 0) {
       setFiltered(portfolioWebsites);
       return;
     }
+    /* else set state to filtered website based on the activeType*/
     const filtered = portfolioWebsites.filter((website) => website.typeId === activeType);
     setFiltered(filtered);
-  }, [activeType]);
+  }, [activeType]); /*Refresh everytime activeType changes */
   return (
     <>
-      <div className="page-width mb-12">
+      <div className="page-width mb-8">
         <button
           onClick={() => setActiveType(0)}
           className={`button-filter ${activeType === 0 ? "button-filter-active" : ""}`}

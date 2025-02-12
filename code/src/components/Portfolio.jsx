@@ -2,13 +2,18 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Website from "./Website";
 import Filter from "./Filter";
-
+import { motion } from "framer-motion";
 const Portfolio = () => {
   const [portfolioWebsites, setPortfolioWebsites] = useState([]);
   const [filtered, setFiltered] = useState([]);
+  {
+    /*active type of filter */
+  }
   const [activeType, setActiveType] = useState(0);
   useEffect(() => {
     //typeIds: 0 - vse, 1 - business, 2 - ubytovani/restaurace, 3 - osobni
+
+    //websites array of objects
     const websites = [
       {
         title: "Kytlice",
@@ -68,12 +73,16 @@ const Portfolio = () => {
         id: "8",
       },
     ];
+
+    /*Settign array of objects in states*/
+
     setPortfolioWebsites(websites);
     setFiltered(websites);
   }, []);
 
   return (
     <>
+      {/* Setting attributes for Filter.jsx for changing  */}
       <Filter
         portfolioWebsites={portfolioWebsites}
         setFiltered={setFiltered}
@@ -81,7 +90,11 @@ const Portfolio = () => {
         setActiveType={setActiveType}
       />
       {/*portfolio cards */}
-      <div className="grid grid-cols-[repeat(auto-fit,_minmax(450px,_1fr))] gap-x-4 gap-y-8 page-width px-4 mb-16 lg:mb-40">
+      <motion.div
+        layout //motion animation method
+        className="grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] gap-x-4 gap-y-8 page-width px-4 mb-16 lg:mb-40"
+      >
+        {/* displays all websites from the filtered state */}
         {filtered.map((website) => {
           return (
             <Website
@@ -90,7 +103,7 @@ const Portfolio = () => {
             />
           );
         })}
-      </div>
+      </motion.div>
     </>
   );
 };

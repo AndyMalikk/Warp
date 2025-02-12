@@ -56,7 +56,7 @@ body {
 @layer utilities {
   /*FONT*/
   .hero-heading {
-    @apply text-white text-3xl font-inter-medium capitalize md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
+    @apply text-white text-4xl font-inter-medium capitalize md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
   }
   .heading {
     @apply text-accent text-2xl font-inter-medium lg:text-4xl xl:text-5xl;
@@ -85,11 +85,8 @@ body {
   .button {
     @apply bg-accent text-white font-karla-regular rounded-full px-4 py-3 uppercase hover:bg-darkAccent;
   }
-  .button-service {
-    @apply text-white font-karla-regular text-sm text-start w-full bg-[#111014] p-4 rounded-lg;
-  }
   .button-filter {
-    @apply bg-white text-accent font-karla-regular rounded-full px-4 py-3 mx-2 uppercase;
+    @apply bg-white text-accent font-karla-regular rounded-full px-4 py-3 m-2 uppercase;
   }
   .button-filter-active {
     @apply bg-accent text-white font-karla-regular rounded-full px-4 py-3 mx-2 uppercase;

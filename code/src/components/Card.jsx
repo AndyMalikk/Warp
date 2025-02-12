@@ -28,7 +28,7 @@ const Card = (props) => {
           </div>
         </div>
         {/* img container */}
-        <div className="lg:w-1/2">
+        <div className="w-[75%] lg:w-1/2">
           <img
             src={props.img}
             alt=""

@@ -25,7 +25,7 @@ const Intro = () => {
             </Link>
           </div>
           {/* img container */}
-          <div className="lg:w-1/2">
+          <div className="w-[75%] lg:w-1/2">
             <img
               src="./public/imgs/Pairprogramming-bro.png"
               alt=""

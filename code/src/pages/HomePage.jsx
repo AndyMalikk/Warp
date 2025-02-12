@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import PortfolioShowcase from "../components/PortfolioShowcase";
-import Services from "../components/Services";
 import Review from "../components/Review";
 import Footer from "../components/Footer";
 import TextSection from "../components/TextSection";

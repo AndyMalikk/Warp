@@ -12,16 +12,13 @@ import Pencil from "../../public/icons/pencil-solid.svg";
 import Content from "../../public/icons/copy-solid.svg";
 import Network from "../../public/icons/network-wired-solid.svg";
 import Code from "../../public/icons/code-solid.svg";
+import Bolt from "../../public/icons/bolt-solid.svg";
 const ServicePage = () => {
   return (
     <>
       <Navbar />
       <Hero heading="Služby které nabízím" />
-      <TextSection
-        heading="Lorem ipsum"
-        body="
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam risus, eu cursus velit scelerisque eget. Sed quis maximus purus, sed lacinia leo. Sed ultrices consequat massa, eget congue metus posuere quis."
-      />
+      <TextSection body="Nabízím služby od návrhu uživatelských rozhraní po vývoj webových stránek. Všechny služby jsou přizpůsobeny vašim potřebám a cílům, aby váš projekt dosáhl maximální kvality." />
       <Card
         subheading="1."
         heading="UI/UX Design"
@@ -35,28 +32,28 @@ const ServicePage = () => {
         number="1."
         title="Rešerše"
         svg={Mag}
-        items={["item1", "item2", "item3"]}
+        items={["Analýza konkurence", "Výzkum uživatelů", "Inspirace"]}
       />
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
         number="2."
         title="Návrh"
         svg={Network}
-        items={["item1", "item2", "item3"]}
+        items={["Návrh struktury", "Domluva s klientem"]}
       />
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
         number="3."
         title="Design"
         svg={Pencil}
-        items={["item1", "item2", "item3"]}
+        items={["Viuzální design", "Uživatelského rozhraní", "Uživatelská zkušenost", "Responzivita"]}
       />
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
         number="4."
         title="Doplnění obsahu"
         svg={Content}
-        items={["item1", "item2", "item3"]}
+        items={["Vložení textu", "Vložení obrázků"]}
       />
       <div className="mb-16 lg:mb-40"></div>
 
@@ -75,30 +72,33 @@ const ServicePage = () => {
         number="1."
         title="Rešerše"
         svg={Mag}
-        items={["Analýza konkurence", "", "item3"]}
+        items={["Analýza konkurence", "Výzkum uživatelů", "Inspirace"]}
       />
+
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
         number="2."
-        title="Návrh"
-        svg={Network}
-        items={["item1", "item2", "item3"]}
+        title="Vývoj"
+        svg={Code}
+        items={["Kódování", "Testování", "Opravy"]}
       />
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
         number="3."
-        title="Vývoj"
-        svg={Code}
-        items={["item1", "item2", "item3"]}
+        title="Doplnění obsahu"
+        svg={Content}
+        items={["Vložení textu", "Vložení obrázků"]}
       />
+
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
         number="4."
-        title="Doplnění obsahu"
-        svg={Content}
-        items={["item1", "item2", "item3"]}
+        title="Optimalizace"
+        svg={Bolt}
+        items={["Zrychlení načítání", "Search Engine Optimalization", "Zlepšení přístupnosti"]}
       />
-      <div className="mb-16 lg:mb-40"></div>
+
+      <div className="mb-20 lg:mb-40"></div>
       <Footer />
     </>
   );
