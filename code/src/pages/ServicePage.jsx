@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
+import FAQ from "../components/FAQ";
 import TextSection from "../components/TextSection";
 import Card from "../components/Card";
 import Tabs from "../components/Tabs";

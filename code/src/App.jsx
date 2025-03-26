@@ -6,6 +6,8 @@ import ServicePage from "./pages/ServicePage";
 import ContactPage from "./pages/ContactPage";
 import AboutMePage from "./pages/AboutMePage";
 import PortfolioPage from "./pages/PortfolioPage";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
 
 /*routing through the web app with an array of objects stating their path and what they should load*/
 const router = createBrowserRouter([
@@ -32,6 +34,16 @@ const router = createBrowserRouter([
   {
     path: "/kontakty",
     element: <ContactPage />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/admin",
+    element: <Login />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/admin/dashboard",
+    element: <Dashboard />,
     errorElement: <NotFoundPage />,
   },
 ]);

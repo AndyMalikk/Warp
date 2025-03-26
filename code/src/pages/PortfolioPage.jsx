@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Portfolio from "../components/Portfolio";
 import Footer from "../components/Footer";
+import FAQ from "../components/FAQ";
 
 const PortfolioPage = () => {
   return (

@@ -12,6 +12,12 @@ body {
   font-family: "montserrat", sans-serif;
 }
 
+body.login-page {
+  background: rgb(2, 175, 95);
+  background: linear-gradient(333deg, rgba(2, 175, 95, 1) 0%, rgba(255, 255, 255, 1) 50%); /* White background for login page */
+  height: 100vh;
+}
+
 #particles {
   z-index: -1;
   height: 70vh;
@@ -64,6 +70,9 @@ body {
   .heading-white {
     @apply text-white text-2xl font-inter-medium lg:text-4xl xl:text-5xl;
   }
+  .heading-black {
+    @apply text-black text-2xl font-inter-medium lg:text-4xl xl:text-5xl;
+  }
   .subheading {
   }
   .heading2 {
@@ -91,9 +100,15 @@ body {
   .button-filter-active {
     @apply bg-accent text-white font-karla-regular rounded-full px-4 py-3 mx-2 uppercase;
   }
+  .login-button {
+    @apply bg-accent text-black font-karla-regular rounded-full px-4 py-2 hover:bg-darkAccent;
+  }
   /*FORMS*/
   .form-input {
-    @apply text-white bg-transparent border-b-[1px] border-gray-500 focus:outline-none caret-white w-full;
+    @apply text-white bg-transparent border-b-[1px] font-karla-regular border-gray-500 focus:outline-none caret-white w-full;
+  }
+  .login-input {
+    @apply text-black bg-transparent border-[1px] rounded-xl font-karla-regular border-black focus:outline-none p-2 border-[1] px-4;
   }
   /*LAYOUT*/
   .page-width {

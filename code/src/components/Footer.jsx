@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import Select from "react-select";
+import FAQ from "./FAQ";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -92,6 +93,36 @@ const Footer = () => {
 
   return (
     <>
+      {/*FAQ SECTION*/}
+      <div className="p-4 paragraph-white rounded-xl page-width mb-16 lg:mb-32">
+        <FAQ
+          question="Kolik stojí vytvoření webové stránky?"
+          answer="Ceny se pohybují mezi 5 000 Kč a 25 000 Kč, podle velikosti a složitosti webu. Jednoduchý jednostránkový web bude levnější, zatímco vícestránkové weby s přizpůsobeným designem budou dražší."
+        />
+        <FAQ
+          question="Jak dlouho trvá vytvoření webu?"
+          answer="Jednoduchý web může být hotový za 1–2 týdny. Složitější projekty mohou trvat až 4 týdny."
+        />
+        <FAQ
+          question="Co ode mě potřebujete na začátek?"
+          answer="1. Popis vaší firmy a nabízených služeb
+          2. Logo, barvy a jakékoliv brandingové materiály
+          3. Textový obsah (nebo vám mohu pomoci s jeho vytvořením)
+          4. Případné vlastní obrázky (nebo mohu použít kvalitní fotobankové obrázky)"
+        />
+        <FAQ
+          question="Co když budu potřebovat podporu po spuštění webu?"
+          answer="Nabízím další podporu a úpravy podle potřeby. Údržba webu stojí 500 Kč měsíčně."
+        />
+        <FAQ
+          question="Poskytujete také doménu a hosting?"
+          answer="Zatím bohužel ne. Doménu a hosting si však jednoduše můžete zařídit sami například na Wedos nebo Webglobe."
+        />
+        <FAQ
+          question="Bude můj web fungovat na mobilních zařízeních?"
+          answer="Ano! Všechny weby, které vytvářím, jsou plně responzivní, takže vypadají skvěle na telefonech, tabletech i počítačích."
+        />
+      </div>
       {/*Form contacts section*/}
       <div className="flex flex-col p-4 page-width md:flex-row md:justify-around md:gap-24">
         {/*FORM*/}

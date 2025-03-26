@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import TextSection from "../components/TextSection";
+import FAQ from "../components/FAQ";
 
 const AboutMePage = () => {
   return (

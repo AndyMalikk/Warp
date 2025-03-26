@@ -28,7 +28,7 @@ const Tabs = (props) => {
             {/* Text */}
             <div className="flex flex-col">
               <p className="paragraph-accent">{props.number}</p>
-              <h3 className="heading-white">{props.title}</h3>
+              <h3 className="heading2">{props.title}</h3>
             </div>
           </div>
 
