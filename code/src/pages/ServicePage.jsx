@@ -7,8 +7,6 @@ import TextSection from "../components/TextSection";
 import Card from "../components/Card";
 import Tabs from "../components/Tabs";
 import Mag from "../../public/icons/mag.svg";
-import Design from "../../public/icons/design.svg";
-import Markup from "../../public/icons/markup.svg";
 import Pencil from "../../public/icons/pencil-solid.svg";
 import Content from "../../public/icons/copy-solid.svg";
 import Network from "../../public/icons/network-wired-solid.svg";

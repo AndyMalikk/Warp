@@ -73,8 +73,6 @@ body.login-page {
   .heading-black {
     @apply text-black text-2xl font-inter-medium lg:text-4xl xl:text-5xl;
   }
-  .subheading {
-  }
   .heading2 {
     @apply text-white text-2xl font-inter-medium lg:text-3xl;
   }
@@ -121,6 +119,7 @@ body.login-page {
   .bullet-list {
     @apply flex items-center gap-4;
   }
+
   .bullet-list-item {
     @apply w-1 lg:w-2 h-1 lg:h-2 bg-green-500;
   }
@@ -136,5 +135,10 @@ body.login-page {
   }
   .nav-a-sidebar {
     @apply h-[100%] px-[24px] py-[20px] flex justify-center;
+  }
+
+  /* ADMIN */
+  .dashboard-sidebar-icon {
+    @apply relative flex items-center justify-center h-12 w-12 my-3 mx-auto shadow-xl bg-secondary rounded-xl text-accent hover:text-white cursor-pointer;
   }
 }

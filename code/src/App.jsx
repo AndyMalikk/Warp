@@ -6,8 +6,10 @@ import ServicePage from "./pages/ServicePage";
 import ContactPage from "./pages/ContactPage";
 import AboutMePage from "./pages/AboutMePage";
 import PortfolioPage from "./pages/PortfolioPage";
-import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import DashboardProjects from "./dashboard/DashboardProjects";
+import DashboardHome from "./dashboard/DashboardHome";
+import DashboardAnalytics from "./dashboard/DashboardAnalytics";
 
 /*routing through the web app with an array of objects stating their path and what they should load*/
 const router = createBrowserRouter([
@@ -42,8 +44,18 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />,
   },
   {
-    path: "/admin/dashboard",
-    element: <Dashboard />,
+    path: "/admin/dashboard/home",
+    element: <DashboardHome />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/admin/dashboard/projects",
+    element: <DashboardProjects />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/admin/dashboard/analytics",
+    element: <DashboardAnalytics />,
     errorElement: <NotFoundPage />,
   },
 ]);

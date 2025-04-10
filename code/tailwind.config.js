@@ -12,6 +12,7 @@ export default {
       colors: {
         primary: "#161519" /*0E0E0E*/,
         secondary: "#141318",
+        darkSecondary: "#100F14",
         accent: "#02af5f",
         darkAccent: "#02804c",
         "black-blur": "rgba(0,0,0,0.7)",
