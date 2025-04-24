@@ -16,7 +16,7 @@ const Portfolio = () => {
     //websites array of objects
     const websites = [
       {
-        title: "Kytlice",
+        title: "Medová oáza Kytlice",
         src: "./public/imgs/PenzionKytlice.png",
         alt: "webová stránka Penzion Kytlice",
         typeId: 2,

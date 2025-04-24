@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import { useAuth } from "../context/AuthContext2";
 
 const Login = () => {
+  const [formValue, setFormValue] = useState({ username: "", password: "" });
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setFormValue({ ...formValue, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("http://localhost:3000/login/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValue),
+    });
+
+    if (res.status === 200) {
+      login(); // Update auth state
+      navigate("/admin/dashboard/home"); // Navigate after login
+    } else {
+      console.error("Login failed");
+    }
+  };
+
   return (
     <>
       <body className="login-page">
@@ -19,7 +49,10 @@ const Login = () => {
             </div>
 
             {/*FORM*/}
-            <div className="flex justify-center items-center flex-col">
+            <form
+              className="flex justify-center items-center flex-col"
+              onSubmit={handleSubmit}
+            >
               <br />
               <input
                 type="text"
@@ -27,6 +60,8 @@ const Login = () => {
                 name="username"
                 placeholder="Jméno"
                 className="login-input mt-4"
+                value={formValue.username}
+                onChange={handleInput}
               />
               <br />
               <input
@@ -35,13 +70,16 @@ const Login = () => {
                 name="password"
                 placeholder="Heslo"
                 className="login-input"
+                value={formValue.password}
+                onChange={handleInput}
               />
               <br />
               <Button
                 label="Přihlásit se"
                 className="login-button mt-4"
+                type="submit"
               />
-            </div>
+            </form>
           </div>
         </div>
       </body>

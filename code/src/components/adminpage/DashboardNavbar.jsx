@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaChartBar, FaSignOutAlt, FaUser, FaClipboardList } from "react-icons/fa";
+import { useAuth } from "../../context/AuthContext2";
 
 const DashboardNavbar = () => {
   const SideBarIcon = ({ icon }) => <div className="dashboard-sidebar-icon">{icon}</div>;
+  const { logout } = useAuth();
 
   return (
     <>
@@ -36,7 +38,10 @@ const DashboardNavbar = () => {
         </div>
 
         {/* Bottom (Logout) icon */}
-        <div className="mb-4">
+        <div
+          className="mb-4"
+          onClick={logout}
+        >
           <SideBarIcon icon={<FaSignOutAlt size="28" />} />
         </div>
       </div>
