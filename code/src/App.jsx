@@ -1,8 +1,6 @@
-// App.jsx
 import React from "react";
-import { createBrowserRouter, Route, RouterProvider } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext2"; // Import AuthProvider
-import HomePage from "./pages/HomePage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/Homepage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ServicePage from "./pages/ServicePage";
 import ContactPage from "./pages/ContactPage";
@@ -12,8 +10,8 @@ import Login from "./pages/Login";
 import DashboardProjects from "./dashboard/DashboardProjects";
 import DashboardHome from "./dashboard/DashboardHome";
 import DashboardAnalytics from "./dashboard/DashboardAnalytics";
-import PrivateRoute2 from "./context/PrivateRoute2"; // Import PrivateRoute
 
+/*routing through the web app with an array of objects stating their path and what they should load*/
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,35 +43,29 @@ const router = createBrowserRouter([
     element: <Login />,
     errorElement: <NotFoundPage />,
   },
-  // Protected Routes
   {
-    path: "/admin/dashboard",
-    element: <PrivateRoute2 />, // Protect this route
-    children: [
-      {
-        path: "home",
-        element: <DashboardHome />,
-        errorElement: <NotFoundPage />,
-      },
-      {
-        path: "projects",
-        element: <DashboardProjects />,
-        errorElement: <NotFoundPage />,
-      },
-      {
-        path: "analytics",
-        element: <DashboardAnalytics />,
-        errorElement: <NotFoundPage />,
-      },
-    ],
+    path: "/admin/dashboard/home",
+    element: <DashboardHome />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/admin/dashboard/projects",
+    element: <DashboardProjects />,
+    errorElement: <NotFoundPage />,
+  },
+  {
+    path: "/admin/dashboard/analytics",
+    element: <DashboardAnalytics />,
+    errorElement: <NotFoundPage />,
   },
 ]);
-
 const App = () => {
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
+    </>
   );
 };
 
