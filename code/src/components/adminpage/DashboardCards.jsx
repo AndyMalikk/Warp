@@ -25,7 +25,7 @@ const DashboardCards = () => {
       status: "Finished",
     },
     {
-      name: "Blog Redesign",
+      name: "Test",
       email: "blogger123@email.com",
       type: "Website Redesign",
       description: "Looking to update the design and improve the user experience of my personal blog.",
