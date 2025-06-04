@@ -1,6 +1,16 @@
 import React from "react";
 import { useState } from "react";
+import ModalProjectCards from "../Modals/ModalProjectCards";
+import Button from "../Button";
+
 const DashboardCards = () => {
+  const [openIndex, setOpenIndex] = useState(null); // Track which project's modal is open
+  const [saved, setSaved] = useState(false); /* check if save was clicked */
+
+  const handleSave = () => {
+    setSaved(true);
+    setTimeout(() => setSaved(false), 1500);
+  };
   const [projects, setProjects] = useState([
     //*pull info from database */
     {
@@ -9,6 +19,7 @@ const DashboardCards = () => {
       type: "Website Development",
       description: "A complete website for a new small business, including an about us page, services, and contact form.",
       status: "New",
+      notes: "",
     },
     {
       name: "Online Store for Handmade Goods",
@@ -16,6 +27,7 @@ const DashboardCards = () => {
       type: "E-commerce Website",
       description: "Need an online store to sell handmade crafts with product listings, shopping cart, and payment integration.",
       status: "Working",
+      notes: "",
     },
     {
       name: "Landing Page for Product Launch",
@@ -23,49 +35,42 @@ const DashboardCards = () => {
       type: "Landing Page",
       description: "A single-page website to promote the launch of our new software product, focusing on key features and call to action.",
       status: "Finished",
+      notes: "",
     },
     {
-      name: "Test",
+      name: "Blog Redesign",
       email: "blogger123@email.com",
       type: "Website Redesign",
       description: "Looking to update the design and improve the user experience of my personal blog.",
       status: "Working",
+      notes: "",
     },
   ]);
 
-  // Function to handle status changes
   const handleStatusChange = (event, index) => {
     const newStatus = event.target.value;
-    // Create a copy of the projects array
     const updatedProjects = [...projects];
-    // Update the status of the specific project
     updatedProjects[index].status = newStatus;
-    // Set the new projects array in the state
     setProjects(updatedProjects);
-    // In a real application, you would also call an API here to update the backend
     console.log(`Project ${projects[index].name} status changed to: ${newStatus}`);
   };
 
   return (
     <div className="ml-24 mt-28 p-6">
       <h2 className="heading-white mb-8">Projekty:</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {projects.map((project, index) => (
-          // Individual project card
           <div
             key={index}
-            className="bg-secondary rounded-lg shadow-md p-8 mb-4 relative" // Added relative here
+            className="bg-secondary rounded-lg shadow-md p-8 mb-4 cursor-pointer relative" // Added cursor-pointer
+            onClick={() => setOpenIndex(index)} // Set the index of the clicked project
           >
-            {/* Status dropdown */}
-            <select
-              className="absolute top-4 right-4 text-xs font-semibold text-white bg-gray-500 rounded-full px-2 py-1 cursor-pointer appearance-none"
-              value={project.status}
-              onChange={(event) => handleStatusChange(event, index)}
-            >
-              <option value="New">New</option>
-              <option value="Working">Working</option>
-              <option value="Finished">Finished</option>
-            </select>
+            {/* Status indicator dot */}
+            <div
+              className={`absolute top-4 right-4 w-3 h-3 rounded-full 
+            ${project.status === "Finished" ? "bg-green-500" : project.status === "Working" ? "bg-orange-500" : "bg-red-500"}`}
+            ></div>
+
             <h3 className="text-lg font-semibold text-white mb-2">{project.name}</h3>
             <p className="text-gray-400 mb-1">
               <span className="font-medium text-white">Od:</span> {project.email}
@@ -76,6 +81,77 @@ const DashboardCards = () => {
             <p className="text-gray-400">
               <span className="font-medium text-white">Popis:</span> {project.description}
             </p>
+
+            {/* Modal for this specific project */}
+            <ModalProjectCards
+              open={openIndex === index}
+              onClose={() => setOpenIndex(null)}
+            >
+              <div className="p-16">
+                <h3 className="heading-white font-semibold mb-8">{project.name}</h3>
+                <p className="text-gray-400 mb-2">
+                  <span className="font-medium text-white">Od:</span> {project.email}
+                </p>
+                <p className="text-gray-400 mb-2">
+                  <span className="font-medium text-white">Typ projektu:</span> {project.type}
+                </p>
+
+                {/* Status Dropdown */}
+                <div className="mb-2">
+                  <span className="font-medium text-white">Status:</span>
+                  <select
+                    className="ml-2 bg-darkSecondary text-white rounded px-3 py-1 border"
+                    value={project.status}
+                    onChange={(event) => handleStatusChange(event, index)}
+                  >
+                    <option
+                      value="New"
+                      className="bg-secondary"
+                    >
+                      New
+                    </option>
+                    <option
+                      value="Working"
+                      className="bg-secondary"
+                    >
+                      Working
+                    </option>
+                    <option
+                      value="Finished"
+                      className="bg-secondary"
+                    >
+                      Finished
+                    </option>
+                  </select>
+                </div>
+
+                <p className="text-gray-400 mb-2">
+                  <span className="font-medium text-white">Popis:</span> {project.description}
+                </p>
+
+                {/* Notes Section */}
+                <div className="">
+                  <label className="block font-medium text-white mb-2">Zápisky:</label>
+                  <textarea
+                    className="w-full h-48 bg-darkSecondary text-white rounded-lg p-4 border border-gray-600 focus:outline-none resize-none"
+                    placeholder="Poznámky k projektu..."
+                    value={project.notes || ""}
+                    onChange={(e) => {
+                      const updatedProjects = [...projects];
+                      updatedProjects[index].notes = e.target.value;
+                      setProjects(updatedProjects);
+                    }}
+                  />
+                </div>
+
+                <button
+                  onClick={handleSave}
+                  className="bg-accent text-white font-karla-regular rounded-md px-4 py-2 hover:bg-darkAccent mt-4"
+                >
+                  {saved ? "Uloženo!" : "Uložit"}
+                </button>
+              </div>
+            </ModalProjectCards>
           </div>
         ))}
       </div>

@@ -1,19 +1,22 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaChartBar, FaSignOutAlt, FaUser, FaClipboardList } from "react-icons/fa";
+import { FaHome, FaEnvelope, FaSignOutAlt, FaUser, FaClipboardList } from "react-icons/fa";
 import { useAuth } from "../../context/AuthContext2";
+import ModalLogout from "../Modals/ModalLogout";
 
 const DashboardNavbar = () => {
   const SideBarIcon = ({ icon }) => <div className="dashboard-sidebar-icon">{icon}</div>;
+  const [open, setOpen] = useState(false);
   const { logout } = useAuth();
 
   return (
     <>
-      <nav className="bg-primary fixed top-0 w-full border-b border-darkSecondary shadow-md z-40">
+      <nav className="bg-primary fixed top-0 w-full border-b border-darkSecondary shadow-md z-1">
         <ul className="w-full top-0 h-[75px] list-none flex items-center my-2">
           <li className="mr-auto mx-4 z-50">
             <img
-              src="../imgs/warp-logo.png"
+              src="/imgs/warp-logo.png"
               alt=""
               className="logo"
             />
@@ -32,17 +35,42 @@ const DashboardNavbar = () => {
           <Link to="/admin/dashboard/projects">
             <SideBarIcon icon={<FaClipboardList size="28" />} />
           </Link>
-          <Link to="/admin/dashboard/analytics">
-            <SideBarIcon icon={<FaChartBar size="28" />} />
+          <Link to="/admin/dashboard/clipboard">
+            <SideBarIcon icon={<FaEnvelope size="28" />} />
           </Link>
         </div>
 
         {/* Bottom (Logout) icon */}
         <div
           className="mb-4"
-          onClick={logout}
+          onClick={() => setOpen(true)}
         >
           <SideBarIcon icon={<FaSignOutAlt size="28" />} />
+
+          {/*MODAL LOGOUT*/}
+          <ModalLogout
+            open={open}
+            onClose={() => setOpen(false)}
+          >
+            <h4 className="heading2 text-center mt-16">Odhlásit se?</h4>
+            <p className="paragraph text-gray-200 text-center mt-4">Opravdu si přejete se odhlásit?</p>
+            <div className="flex flex-row justify-center mt-20 gap-4">
+              <button
+                onClick={logout}
+                className="bg-red-500 hover:bg-red-700 text-white font-karla-regular rounded-full px-4 py-2"
+              >
+                Odhlásit se
+              </button>
+              <button
+                onClick={() => {
+                  setOpen(false);
+                }}
+                className=" text-white font-karla-regular rounded-full px-4 py-2"
+              >
+                Zrušit
+              </button>
+            </div>
+          </ModalLogout>
         </div>
       </div>
     </>

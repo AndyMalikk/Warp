@@ -11,7 +11,7 @@ import PortfolioPage from "./pages/PortfolioPage";
 import Login from "./pages/Login";
 import DashboardProjects from "./dashboard/DashboardProjects";
 import DashboardHome from "./dashboard/DashboardHome";
-import DashboardAnalytics from "./dashboard/DashboardAnalytics";
+import DashboardClipboard from "./dashboard/DashboardClipboard";
 import PrivateRoute2 from "./context/PrivateRoute2"; // Import PrivateRoute
 
 const router = createBrowserRouter([
@@ -61,8 +61,8 @@ const router = createBrowserRouter([
         errorElement: <NotFoundPage />,
       },
       {
-        path: "analytics",
-        element: <DashboardAnalytics />,
+        path: "clipboard",
+        element: <DashboardClipboard />,
         errorElement: <NotFoundPage />,
       },
     ],

@@ -7,15 +7,17 @@ const Login = () => {
   const [formValue, setFormValue] = useState({ username: "", password: "" });
   const { login } = useAuth();
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState(false);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
+    setLoginError(false);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoginError(false);
     const res = await fetch("http://localhost:3000/login/user", {
       method: "POST",
       headers: {
@@ -29,6 +31,8 @@ const Login = () => {
       navigate("/admin/dashboard/home"); // Navigate after login
     } else {
       console.error("Login failed");
+      setLoginError(true);
+      setFormValue({ ...formValue, password: "" }); // clears password field
     }
   };
 
@@ -74,6 +78,8 @@ const Login = () => {
                 onChange={handleInput}
               />
               <br />
+              {/*login error message*/}
+              {loginError && <p className="text-red-500 text-sm text-center">Uživatelské jméno nebo heslo je nesprávné.</p>}
               <Button
                 label="Přihlásit se"
                 className="login-button mt-4"
