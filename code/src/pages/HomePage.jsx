@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import TextSection from "../components/TextSection";
 import Card from "../components/Card";
 import FAQ from "../components/FAQ";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
@@ -23,8 +24,25 @@ const HomePage = () => {
         heading="Webové stránky nemusí stát statisíce."
         body="Nabízím webové stránky za dostupné ceny, ideální pro malé byznysy a začínající podnikatele."
       />
-      <h3 className="text-white paragraph mb-4 text-center">Moje Role</h3>
-      <h2 className="heading text-center mb-16">Služby</h2>
+      <motion.h3
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.8 }}
+        className="text-white paragraph mb-4 text-center"
+      >
+        Moje Role
+      </motion.h3>
+
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25, ease: "easeOut", delay: 0.1 }}
+        viewport={{ once: true, amount: 0.8 }}
+        className="heading text-center mb-16"
+      >
+        Služby
+      </motion.h2>
 
       <Card
         subheading="1."

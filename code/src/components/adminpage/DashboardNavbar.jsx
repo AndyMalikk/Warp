@@ -21,9 +21,6 @@ const DashboardNavbar = () => {
               className="logo"
             />
           </li>
-          <li className="mx-4">
-            <SideBarIcon icon={<FaUser size="28" />} />
-          </li>
         </ul>
       </nav>
       <div className="fixed top-[90px] left-0 h-[calc(100vh-90px)] w-20 flex flex-col bg-darkSecondary justify-between">

@@ -6,12 +6,17 @@ const Website = ({ website }) => {
   return (
     <>
       <motion.div layout>
-        <h2 className="paragraph-white">{website.title}</h2>
-        <img
-          src={website.src}
-          alt={website.alt}
-          className="w-full h-[30vh] object-cover mb-4 rounded-xl"
-        />
+        <a
+          href={website.link}
+          target="_BLANK"
+        >
+          <h2 className="paragraph-white">{website.title}</h2>
+          <img
+            src={website.src}
+            alt={website.alt}
+            className="w-full h-[30vh] object-cover mb-4 rounded-xl"
+          />
+        </a>
       </motion.div>
     </>
   );

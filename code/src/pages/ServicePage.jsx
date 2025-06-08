@@ -12,21 +12,28 @@ import Content from "../../public/icons/copy-solid.svg";
 import Network from "../../public/icons/network-wired-solid.svg";
 import Code from "../../public/icons/code-solid.svg";
 import Bolt from "../../public/icons/bolt-solid.svg";
+import { motion } from "framer-motion";
 const ServicePage = () => {
   return (
     <>
       <Navbar />
       <Hero heading="Služby které nabízím" />
-      <TextSection body="Nabízím služby od návrhu uživatelských rozhraní po vývoj webových stránek. Všechny služby jsou přizpůsobeny vašim potřebám a cílům, aby váš projekt dosáhl maximální kvality." />
+
       <Card
         subheading="1."
         heading="UI/UX Design"
         body=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam risus, eu cursus velit scelerisque eget. Sed quis maximus purus, sed lacinia leo. Sed ultrices consequat massa, eget congue metus posuere quis. "
         img="./imgs/MobileUI-UX-amico.png"
       />
-      <h3 className="heading-white page-width mb-16 p-4">
+      <motion.h3
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.8 }}
+        className="heading-white page-width mb-16 p-4"
+      >
         Můj postup práce při <span className="text-accent">UI/UX Designu</span>
-      </h3>
+      </motion.h3>
       <Tabs
         number="1."
         title="Rešerše"
@@ -64,9 +71,15 @@ const ServicePage = () => {
         img="./imgs/Open source-amico.png"
         reverse={true}
       />
-      <h3 className="heading-white page-width mb-16 p-4">
-        Můj postup práce při <span className="text-accent">WEB DEVELOPMENTU</span>
-      </h3>
+      <motion.h3
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.8 }}
+        className="heading-white page-width mb-16 p-4"
+      >
+        Můj postup práce při <span className="text-accent">Web Developmentu</span>
+      </motion.h3>
       <Tabs
         number="1."
         title="Rešerše"

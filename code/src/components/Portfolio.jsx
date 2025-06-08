@@ -21,6 +21,7 @@ const Portfolio = () => {
         alt: "webová stránka Penzion Kytlice",
         typeId: 2,
         id: "2",
+        link: "https://medovaoazakytlice.cz/",
       },
       {
         title: "V Oblacích",
@@ -28,6 +29,7 @@ const Portfolio = () => {
         alt: "webová stránka V Oblacích",
         typeId: 2,
         id: "3",
+        link: "https://voblacich.infinityfreeapp.com/?i=1",
       },
       {
         title: "Valhalla",
@@ -35,6 +37,7 @@ const Portfolio = () => {
         alt: "webová stránka Valhalla",
         typeId: 1,
         id: "1",
+        link: "https://andymalikk.github.io/Valhalla/",
       },
 
       {
@@ -43,6 +46,7 @@ const Portfolio = () => {
         alt: "webová stránka Abstract",
         typeId: 1,
         id: "4",
+        link: "https://andymalikk.github.io/Abstract-copy/",
       },
       {
         title: "Alpen Tesitin",
