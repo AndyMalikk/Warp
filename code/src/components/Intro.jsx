@@ -56,7 +56,6 @@ const Intro = () => {
       >
         <img
           src="./public/imgs/Pairprogramming-bro.png"
-          alt="Pair programming illustration"
           className="w-full rounded-lg"
         />
       </motion.div>

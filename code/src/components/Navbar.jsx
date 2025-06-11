@@ -82,7 +82,7 @@ const Navbar = () => {
           >
             <img
               src="./imgs/warp-logo.png"
-              alt=""
+              alt="Warp logo"
               className="logo"
             />
           </Link>

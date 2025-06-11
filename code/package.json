@@ -12,6 +12,7 @@
   "dependencies": {
     "@tsparticles/all": "^3.6.0",
     "@tsparticles/react": "^3.0.0",
+    "cors": "^2.8.5",
     "framer-motion": "^12.4.2",
     "motion": "^12.16.0",
     "react": "^18.3.1",

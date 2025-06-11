@@ -22,7 +22,6 @@ const Tabs = (props) => {
 
             <img
               src={props.svg}
-              alt=""
               className="h-[50px] w-[50px] "
             />
             {/* Text */}

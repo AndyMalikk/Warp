@@ -20,11 +20,12 @@ const Portfolio = (props) => {
 
       {/* Static image container */}
       <div className="flex flex-col md:flex-row md:justify-center md:flex-wrap lg:justify-center mb-4 md:mb-8">
-        {props.images.map((image, index) => (
+        {props.items.map((item, index) => (
           <img
             key={index}
-            src={image}
-            alt="Portfolio project"
+            src={item.src}
+            alt={item.alt}
+            loading="lazy"
             className="w-full md:w-1/2 lg:w-1/4"
           />
         ))}

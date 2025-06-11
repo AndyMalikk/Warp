@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoginError(false);
-    const res = await fetch("http://localhost:3000/login/user", {
+    const res = await fetch(`http://localhost:3000/login/user`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Login = () => {
             {/*TEXT*/}
             <div className="flex justify-center items-center flex-col">
               <img
-                src="./imgs/warp-logo-black.png"
+                src="/imgs/warp-logo-black.png"
                 alt="Warp logo"
                 className="h-[30px] w-[70px] mt-4"
               />

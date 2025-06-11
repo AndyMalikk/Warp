@@ -44,18 +44,22 @@ body.login-page {
   @font-face {
     font-family: "montserrat-bold";
     src: url("/fonts/montserrat-bold.woff2") format("woff2");
+    font-display: swap;
   }
   @font-face {
     font-family: "montserrat-medium";
     src: url("/fonts/montserrat-medium.woff2") format("woff2");
+    font-display: swap;
   }
   @font-face {
     font-family: "karla-regular";
     src: url("/fonts/karla-regular.woff2") format("woff2");
+    font-display: swap;
   }
   @font-face {
     font-family: "inter-medium";
     src: url("/fonts/inter-medium.woff2") format("woff2");
+    font-display: swap;
   }
 }
 

@@ -19,7 +19,14 @@ const HomePage = () => {
         heading="Buďte tam kde vás zákazníci hledají"
       />
       <Intro />
-      <PortfolioShowcase images={["./imgs/PenzionKytlice.png", "./imgs/VOblacich.png", "./imgs/Valhalla.png", "./imgs/Abstract.png"]} />
+      <PortfolioShowcase
+        items={[
+          { src: "./imgs/PenzionKytlice.png", alt: "Web penzionu Kytlice" },
+          { src: "./imgs/VOblacich.png", alt: "Webová stránka restaurace V Oblacích" },
+          { src: "./imgs/Valhalla.png", alt: "Web tělocvičny Valhalla" },
+          { src: "./imgs/Abstract.png", alt: "Kopie webu Abstract" },
+        ]}
+      />
       <TextSection
         heading="Webové stránky nemusí stát statisíce."
         body="Nabízím webové stránky za dostupné ceny, ideální pro malé byznysy a začínající podnikatele."

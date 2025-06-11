@@ -39,7 +39,7 @@ const Card = (props) => {
       >
         <img
           src={props.img}
-          alt=""
+          loading="lazy"
           className="w-full rounded-xl"
         />
       </motion.div>

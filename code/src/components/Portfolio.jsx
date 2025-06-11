@@ -18,7 +18,7 @@ const Portfolio = () => {
       {
         title: "Medová oáza Kytlice",
         src: "./public/imgs/PenzionKytlice.png",
-        alt: "webová stránka Penzion Kytlice",
+        alt: "Webová stránka Penzion Kytlice",
         typeId: 2,
         id: "2",
         link: "https://medovaoazakytlice.cz/",
@@ -26,7 +26,7 @@ const Portfolio = () => {
       {
         title: "V Oblacích",
         src: "./public/imgs/VOblacich.png",
-        alt: "webová stránka V Oblacích",
+        alt: "Webová stránka V Oblacích",
         typeId: 2,
         id: "3",
         link: "https://voblacich.infinityfreeapp.com/?i=1",
@@ -34,7 +34,7 @@ const Portfolio = () => {
       {
         title: "Valhalla",
         src: "./public/imgs/Valhalla.png",
-        alt: "webová stránka Valhalla",
+        alt: "Webová stránka Valhalla",
         typeId: 1,
         id: "1",
         link: "https://andymalikk.github.io/Valhalla/",
@@ -43,7 +43,7 @@ const Portfolio = () => {
       {
         title: "Abstract",
         src: "./public/imgs/abstract.png",
-        alt: "webová stránka Abstract",
+        alt: "Webová stránka Abstract",
         typeId: 1,
         id: "4",
         link: "https://andymalikk.github.io/Abstract-copy/",
@@ -51,28 +51,28 @@ const Portfolio = () => {
       {
         title: "Alpen Tesitin",
         src: "./public/imgs/AlpenTesitin.png",
-        alt: "webová stránka Alpen Tesitin",
+        alt: "Webová stránka Alpen Tesitin",
         typeId: 2,
         id: "5",
       },
       {
         title: "Leeroy",
         src: "./public/imgs/Leeroy.png",
-        alt: "webová stránka Leeroy",
+        alt: "Webová stránka Leeroy",
         typeId: 1,
         id: "6",
       },
       {
         title: "Michael Aust",
         src: "./public/imgs/MichaelAust.png",
-        alt: "webová stránka Michaela Austa",
+        alt: "Webová stránka Michaela Austa",
         typeId: 3,
         id: "7",
       },
       {
         title: "Weglot",
         src: "./public/imgs/Weglot.png",
-        alt: "webová stránka Weglot",
+        alt: "Webová stránka Weglot",
         typeId: 1,
         id: "8",
       },
