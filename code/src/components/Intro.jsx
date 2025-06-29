@@ -31,31 +31,24 @@ const Intro = () => {
       className="flex flex-col-reverse items-center p-4 gap-24 mb-16 page-width md:flex-row md:justify-around lg:my-40"
     >
       {/* Text container */}
-      <motion.div
-        variants={item}
-        className="lg:w-1/2"
-      >
+      <motion.div variants={item} className="lg:w-1/2">
         <h3 className="text-white paragraph mb-4">Co dělám?</h3>
         <h2 className="heading mb-8">Webové stránky na zakázku</h2>
         <p className="paragraph text-white max-w-[600px] mb-8">
-          Warp je česká digitální agentura, která pomáhá firmám vyniknout online. <br />
-          Vytvářím našim klientům webové stránky, které nejen že dobře vypadají, ale také jim dávají na trhu výhodu.
+          Warp je česká digitální agentura, která pomáhá firmám vyniknout
+          online. <br />
+          Vytvářím našim klientům webové stránky, které nejen že dobře vypadají,
+          ale také jim dávají na trhu výhodu.
         </p>
         <Link to="/kontakty">
-          <Button
-            label="Chci web"
-            className="button"
-          />
+          <Button label="Chci web" className="button" />
         </Link>
       </motion.div>
 
       {/* Image container */}
-      <motion.div
-        variants={item}
-        className="w-[75%] lg:w-1/2"
-      >
+      <motion.div variants={item} className="w-[75%] lg:w-1/2">
         <img
-          src="./public/imgs/Pairprogramming-bro.png"
+          src="./imgs/Pairprogramming-bro.png"
           className="w-full rounded-lg"
         />
       </motion.div>
