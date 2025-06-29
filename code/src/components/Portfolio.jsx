@@ -17,7 +17,7 @@ const Portfolio = () => {
     const websites = [
       {
         title: "Medová oáza Kytlice",
-        src: "./public/imgs/PenzionKytlice.png",
+        src: "/public/imgs/PenzionKytlice.png",
         alt: "Webová stránka Penzion Kytlice",
         typeId: 2,
         id: "2",
@@ -100,12 +100,7 @@ const Portfolio = () => {
       >
         {/* displays all websites from the filtered state */}
         {filtered.map((website) => {
-          return (
-            <Website
-              key={website.id}
-              website={website}
-            />
-          );
+          return <Website key={website.id} website={website} />;
         })}
       </motion.div>
     </>
