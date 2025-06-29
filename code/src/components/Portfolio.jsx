@@ -17,7 +17,7 @@ const Portfolio = () => {
     const websites = [
       {
         title: "Medová oáza Kytlice",
-        src: "/public/imgs/PenzionKytlice.png",
+        src: "/imgs/PenzionKytlice.png",
         alt: "Webová stránka Penzion Kytlice",
         typeId: 2,
         id: "2",
