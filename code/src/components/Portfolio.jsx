@@ -17,7 +17,7 @@ const Portfolio = () => {
     const websites = [
       {
         title: "Medová oáza Kytlice",
-        src: "./public/imgs/PenzionKytlice.png",
+        src: "./imgs/PenzionKytlice.png",
         alt: "Webová stránka Penzion Kytlice",
         typeId: 2,
         id: "2",
@@ -25,56 +25,19 @@ const Portfolio = () => {
       },
       {
         title: "V Oblacích",
-        src: "./public/imgs/VOblacich.png",
-        alt: "Webová stránka V Oblacích",
+        src: "./imgs/VOblacich.png",
+        alt: "W/ebová stránka V Oblacích",
         typeId: 2,
         id: "3",
         link: "https://voblacich.infinityfreeapp.com/?i=1",
       },
       {
         title: "Valhalla",
-        src: "./public/imgs/Valhalla.png",
+        src: "./imgs/Valhalla.png",
         alt: "Webová stránka Valhalla",
         typeId: 1,
         id: "1",
         link: "https://andymalikk.github.io/Valhalla/",
-      },
-
-      {
-        title: "Abstract",
-        src: "./public/imgs/abstract.png",
-        alt: "Webová stránka Abstract",
-        typeId: 1,
-        id: "4",
-        link: "https://andymalikk.github.io/Abstract-copy/",
-      },
-      {
-        title: "Alpen Tesitin",
-        src: "./public/imgs/AlpenTesitin.png",
-        alt: "Webová stránka Alpen Tesitin",
-        typeId: 2,
-        id: "5",
-      },
-      {
-        title: "Leeroy",
-        src: "./public/imgs/Leeroy.png",
-        alt: "Webová stránka Leeroy",
-        typeId: 1,
-        id: "6",
-      },
-      {
-        title: "Michael Aust",
-        src: "./public/imgs/MichaelAust.png",
-        alt: "Webová stránka Michaela Austa",
-        typeId: 3,
-        id: "7",
-      },
-      {
-        title: "Weglot",
-        src: "./public/imgs/Weglot.png",
-        alt: "Webová stránka Weglot",
-        typeId: 1,
-        id: "8",
       },
     ];
 
