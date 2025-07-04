@@ -9,7 +9,7 @@ const Review = (props) => {
           <img
             src={props.reviewImg}
             alt="Paní Nováková, spokojená klientka"
-            className="rounded-full w-[35px] h-[35px] lg:w-[45px] lg:h-[45px]"
+            className="rounded-full w-[35px] h-[35px] lg:w-[50px] lg:h-[50px]"
           />
           <p className="text-white font-bold paragraph">{props.name}</p>
         </div>

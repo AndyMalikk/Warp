@@ -6,6 +6,8 @@ import TextSection from "../components/TextSection";
 import FAQ from "../components/FAQ";
 import { FaPaintBrush, FaCode, FaHandshake } from "react-icons/fa";
 import { motion } from "framer-motion";
+import reviewImg from "/public/imgs/EmptyIMG.jpg";
+import aboutme from "/public/imgs/aboutme2.png";
 
 const container = {
   hidden: { opacity: 0, y: 50 },
@@ -36,29 +38,32 @@ const AboutMePage = () => {
       <motion.section
         variants={container}
         initial="hidden"
-        animate="visible"
-        className="page-width mb-40 lg:mb-60  px-4 text-center"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="page-width mb-40 lg:mb-60 px-4 textcenter-"
       >
         <div className="max-w-[700px] mx-auto">
-          <motion.h2 variants={item} className="textSection-heading mb-8">
-            Jsem student, vývojář a designer
-          </motion.h2>
-
+          <motion.img
+            variants={item}
+            src={aboutme}
+            alt="Ondřej Malík, zakladatel agentury"
+            className="rounded-full w-32 h-32 lg:w-52 lg:h-52 mx-auto mb-12"
+          />
           <motion.p variants={item} className="paragraph-white mb-6">
-            Webové stránky jsem původně tvořil pouze pro zábavu, jako způsob jak
-            vyjádřit své kreativní nápady. Postupem času jsem si uvědomil, že
-            svými schopnostmi můžu pomáhat podnikatelům.
+            Žiju v Děčíně a studuju na střední škole Resslova 5 obor informační
+            technologie se zaměřením na programování a datové sítě.
           </motion.p>
 
           <motion.p variants={item} className="paragraph-white mb-6">
-            Mým cílem je vytvořit webovou stránku na míru — moderní, přehlednou
-            a snadno ovladatelnou pro vaše zákazníky.
+            Webové stránky buduji, protože rád vyjadřuji své kreativní nápady,
+            baví mě vytvářet nové věci a chci vidět výsledky své práce v reálném
+            čase.
           </motion.p>
 
           <motion.p variants={item} className="paragraph-white">
-            Pokud hledáte partnera, který vám pomůže s vaší online prezentací,
-            neváhejte mě kontaktovat. Společně najdeme to nejlepší řešení pro
-            váš projekt.
+            Vyrůstal jsem v Česku, ale jednou bych rád žil v zahraničí. Mám rád
+            box, design, robotiku, čtení, stříhání videí a trávení času s
+            přáteli.
           </motion.p>
         </div>
       </motion.section>
@@ -101,7 +106,7 @@ const AboutMePage = () => {
           Pojďme začít spolupracovat!
         </motion.h3>
         <motion.p variants={item} className="paragraph-white mb-8">
-          Neváhejte mě kontaktovat a pobavit se o vašem projektu.
+          Neváhejte mě kontaktovat a říct mi o vašem projektu.
         </motion.p>
 
         <motion.div variants={item}>
@@ -120,7 +125,7 @@ const AboutMePage = () => {
 const FeatureCard = ({ icon, title, description }) => (
   <motion.div
     variants={item}
-    className="bg-darkSecondary p-8 rounded-2xl shadow-lg text-center hover:scale-105 transition-transform"
+    className=" p-8 rounded-2xl shadow-xl text-center hover:scale-105 transition-transform"
   >
     <div className="text-accent mb-6 flex justify-center">{icon}</div>
     <h4 className="heading2 mb-4">{title}</h4>

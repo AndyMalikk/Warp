@@ -22,7 +22,8 @@ const ServicePage = () => {
       <Card
         subheading="1."
         heading="UI/UX Design"
-        body=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam risus, eu cursus velit scelerisque eget. Sed quis maximus purus, sed lacinia leo. Sed ultrices consequat massa, eget congue metus posuere quis. "
+        body="Navrhuji, jak bude váš web vypadat a jak se na něm budou lidé pohybovat. Zaměřuji se na moderní, přehledný a uživatelsky přívětivý design, který dává smysl a vypadá skvěle na všech zařízeních.
+Při návrhu vycházím z potřeb vašich uživatelů i obchodních cílů. Výsledkem je design, který nejen dobře vypadá, ale zároveň funguje chytře a efektivně."
         img="./imgs/MobileUI-UX-amico.png"
       />
       <motion.h3
@@ -52,7 +53,12 @@ const ServicePage = () => {
         number="3."
         title="Design"
         svg={Pencil}
-        items={["Viuzální design", "Uživatelského rozhraní", "Uživatelská zkušenost", "Responzivita"]}
+        items={[
+          "Vizuální design",
+          "Uživatelského rozhraní",
+          "Uživatelská zkušenost",
+          "Responzivita",
+        ]}
       />
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
@@ -66,8 +72,8 @@ const ServicePage = () => {
       <Card
         subheading="2."
         heading="WEB DEVELOPMENT"
-        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit sit amet lorem nec viverra. Etiam libero nisi. 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam risus, eu cursus velit scelerisque eget. Sed quis maximus purus, sed lacinia leo. Sed ultrices consequat massa, eget congue metus posuere quis. "
+        body="Váš web nejen navrhnu, ale také postavím. Od jednoduchých prezentací až po složitější funkce – postarám se o to, aby vše fungovalo rychle, bezpečně a spolehlivě.
+Používám moderní technologie a dbám na to, aby byl web snadno udržitelný a připravený na další rozvoj. Díky čistému kódu a optimalizaci bude váš web výkonný i na mobilních zařízeních."
         img="./imgs/Open source-amico.png"
         reverse={true}
       />
@@ -78,7 +84,8 @@ const ServicePage = () => {
         viewport={{ once: true, amount: 0.8 }}
         className="heading-white page-width mb-16 p-4"
       >
-        Můj postup práce při <span className="text-accent">Web Developmentu</span>
+        Můj postup práce při{" "}
+        <span className="text-accent">Web Developmentu</span>
       </motion.h3>
       <Tabs
         number="1."
@@ -92,7 +99,7 @@ const ServicePage = () => {
         number="2."
         title="Vývoj"
         svg={Code}
-        items={["Kódování", "Testování", "Opravy"]}
+        items={["Vytváření webu", "Testování", "Opravy"]}
       />
       <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
       <Tabs
@@ -107,7 +114,11 @@ const ServicePage = () => {
         number="4."
         title="Optimalizace"
         svg={Bolt}
-        items={["Zrychlení načítání", "Search Engine Optimalization", "Zlepšení přístupnosti"]}
+        items={[
+          "Zrychlení načítání",
+          "Search Engine Optimalization",
+          "Zlepšení přístupnosti",
+        ]}
       />
 
       <div className="mb-20 lg:mb-40"></div>

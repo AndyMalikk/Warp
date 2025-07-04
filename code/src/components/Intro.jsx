@@ -37,8 +37,8 @@ const Intro = () => {
         <p className="paragraph text-white max-w-[600px] mb-8">
           Warp je česká digitální agentura, která pomáhá firmám vyniknout
           online. <br />
-          Vytvářím našim klientům webové stránky, které nejen že dobře vypadají,
-          ale také jim dávají na trhu výhodu.
+          Vytvářím klientům webové stránky, které nejen že dobře vypadají, ale
+          také jim dávají na trhu výhodu.
         </p>
         <Link to="/kontakty">
           <Button label="Chci web" className="button" />

@@ -94,24 +94,20 @@ const Footer = () => {
   return (
     <>
       {/*FAQ SECTION*/}
+      <h3 className="heading2 mb-8 text-center mx-auto">
+        Často kladené otázky
+      </h3>
       <div className="p-4 paragraph-white rounded-xl page-width mb-16 lg:mb-32">
-        <FAQ
-          question="Kolik stojí vytvoření webové stránky?"
-          answer="Ceny se pohybují mezi 5 000 Kč a 25 000 Kč, podle velikosti a složitosti webu. Jednoduchý jednostránkový web bude levnější, zatímco vícestránkové weby s přizpůsobeným designem budou dražší."
-        />
         <FAQ
           question="Jak dlouho trvá vytvoření webu?"
           answer="Jednoduchý web může být hotový za 1–2 týdny. Složitější projekty mohou trvat až 4 týdny."
         />
         <FAQ
           question="Co ode mě potřebujete na začátek?"
-          answer="1. Popis vaší firmy a nabízených služeb
-          2. Logo, barvy a jakékoliv brandingové materiály
-          3. Textový obsah (nebo vám mohu pomoci s jeho vytvořením)
-          4. Případné vlastní obrázky (nebo mohu použít kvalitní fotobankové obrázky)"
+          answer="Není to nutné, ale v idealním případě by jste měli poskytnout fotografie, slogany, texty a kontakty."
         />
         <FAQ
-          question="Co když budu potřebovat podporu po spuštění webu?"
+          question="Co když budu potřebovat úpravy po spuštění webu?"
           answer="Nabízím další podporu a úpravy podle potřeby. Údržba webu stojí 500 Kč měsíčně."
         />
         <FAQ
@@ -128,10 +124,7 @@ const Footer = () => {
         {/*FORM*/}
         <div className="mb-16 md:w-1/3 lg:w-2/3">
           <form onSubmit={handleSubmit}>
-            <label
-              htmlFor="name"
-              className="paragraph text-white"
-            >
+            <label htmlFor="name" className="paragraph text-white">
               Jméno
             </label>
             <br />
@@ -145,10 +138,7 @@ const Footer = () => {
               className="form-input mb-4"
             />
             <br />
-            <label
-              htmlFor="email"
-              className="paragraph text-white"
-            >
+            <label htmlFor="email" className="paragraph text-white">
               Email
             </label>
             <br />
@@ -173,10 +163,7 @@ const Footer = () => {
               placeholder="Typ projektu"
             />
             <br />
-            <label
-              htmlFor="message"
-              className="paragraph text-white"
-            >
+            <label htmlFor="message" className="paragraph text-white">
               Popište váš projekt
             </label>
             <br />
@@ -193,10 +180,7 @@ const Footer = () => {
             />
             <br />
             <br />
-            <Button
-              label="Odeslat"
-              className="button"
-            />
+            <Button label="Odeslat" className="button" />
           </form>
         </div>
 
@@ -211,7 +195,9 @@ const Footer = () => {
             />
             <p className="paragraph text-white">info@warp.cz</p>
           </div>
-          <p className="heading2 mt-8 md:mt-36 max-w-[300px]">Pojďme společně posílit váš byznys</p>
+          <p className="heading2 mt-8 md:mt-36 max-w-[300px]">
+            Pojďme společně posílit váš byznys
+          </p>
         </div>
       </div>
 

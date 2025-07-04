@@ -16,13 +16,16 @@ const HomePage = () => {
       <Navbar />
       <Hero
         subheading="Buďte vidět. Buďte online."
-        heading="Buďte tam kde vás zákazníci hledají"
+        heading="Moderní webové stránky na míru."
       />
       <Intro />
       <PortfolioShowcase
         items={[
           { src: "./imgs/PenzionKytlice.png", alt: "Web penzionu Kytlice" },
-          { src: "./imgs/VOblacich.png", alt: "Webová stránka restaurace V Oblacích" },
+          {
+            src: "./imgs/VOblacich.png",
+            alt: "Webová stránka restaurace V Oblacích",
+          },
           { src: "./imgs/Valhalla.png", alt: "Web tělocvičny Valhalla" },
           { src: "./imgs/Abstract.png", alt: "Kopie webu Abstract" },
         ]}
@@ -38,7 +41,7 @@ const HomePage = () => {
         viewport={{ once: true, amount: 0.8 }}
         className="text-white paragraph mb-4 text-center"
       >
-        Moje Role
+        Co nabízím?
       </motion.h3>
 
       <motion.h2
@@ -54,14 +57,14 @@ const HomePage = () => {
       <Card
         subheading="1."
         heading="UI/UX Design"
-        body="Navrhuji rozhraní, která zaujmou vzhledem a usnádní práci vašim zákazníkům. Kladu důraz na jednoduchost, přhlednost a pohodlí při používání."
+        body="Navrhuji, jak bude váš web vypadat a jak se na něm budou lidé pohybovat. Zaměřuji se na moderní, přehledný a uživatelsky přívětivý design, který dává smysl a vypadá skvěle na všech zařízeních."
         img="./imgs/MobileUI-UX-amico.png"
         linkShown={true}
       />
       <Card
         subheading="2."
         heading="WEB DEVELOPMENT"
-        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse hendrerit sit amet lorem nec viverra. Etiam libero nisi."
+        body="Váš web nejen navrhnu, ale také postavím. Od jednoduchých prezentací až po složitější funkce (např. rezervační systémy) – postarám se o to, aby vše fungovalo rychle, bezpečně a spolehlivě."
         img="./imgs/Open source-amico.png"
         linkShown={true}
         reverse={true}

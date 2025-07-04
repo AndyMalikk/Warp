@@ -35,10 +35,7 @@ const Hero = (props) => {
         animate="visible"
         className="relative z-20 page-width flex flex-col justify-center h-full text-white mx-4"
       >
-        <motion.p
-          variants={item}
-          className="paragraph text-accent mb-6 mx-5"
-        >
+        <motion.p variants={item} className="paragraph text-accent mb-6 mx-5">
           {props.subheading}
         </motion.p>
 
@@ -51,10 +48,7 @@ const Hero = (props) => {
 
         <motion.div variants={item}>
           <Link to="/kontakty">
-            <Button
-              label="Kontaktovat"
-              className="button mx-4"
-            />
+            <Button label="Chci web" className="button mx-4" />
           </Link>
         </motion.div>
       </motion.div>
