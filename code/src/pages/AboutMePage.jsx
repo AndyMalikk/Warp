@@ -85,7 +85,7 @@ const AboutMePage = () => {
           <FeatureCard
             icon={<FaCode size={40} />}
             title="Moderní technologie"
-            description="Pro budování používám technologie jako Elementor které zaručí špičkovou kvalitu."
+            description="Pro budování používám Wordpress který zaručí špičkovou kvalitu."
           />
           <FeatureCard
             icon={<FaHandshake size={40} />}
