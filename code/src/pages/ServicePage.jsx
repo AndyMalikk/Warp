@@ -13,11 +13,13 @@ import Network from "../../public/icons/network-wired-solid.svg";
 import Code from "../../public/icons/code-solid.svg";
 import Bolt from "../../public/icons/bolt-solid.svg";
 import { motion } from "framer-motion";
+import serviceVector from "/imgs/Investment-data-amico.png";
+
 const ServicePage = () => {
   return (
     <>
       <Navbar />
-      <Hero heading="Služby které nabízím" />
+      <Hero heading="Služby které nabízím" img={serviceVector} />
 
       <Card
         subheading="1."

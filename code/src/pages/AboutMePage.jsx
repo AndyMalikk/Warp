@@ -8,6 +8,7 @@ import { FaPaintBrush, FaCode, FaHandshake } from "react-icons/fa";
 import { motion } from "framer-motion";
 import reviewImg from "/public/imgs/EmptyIMG.jpg";
 import aboutme from "/public/imgs/aboutme2.png";
+import aboutMeVector from "/imgs/About-me-bro.png";
 
 const container = {
   hidden: { opacity: 0, y: 50 },
@@ -32,7 +33,7 @@ const AboutMePage = () => {
   return (
     <>
       <Navbar />
-      <Hero heading="Záleží mi na vašem úspěchu" />
+      <Hero heading="Záleží mi na vašem úspěchu" img={aboutMeVector} />
 
       {/* About Me Section */}
       <motion.section

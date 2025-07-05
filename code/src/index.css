@@ -14,7 +14,11 @@ body {
 
 body.login-page {
   background: rgb(2, 175, 95);
-  background: linear-gradient(333deg, rgba(2, 175, 95, 1) 0%, rgba(255, 255, 255, 1) 50%); /* White background for login page */
+  background: linear-gradient(
+    333deg,
+    rgba(2, 175, 95, 1) 0%,
+    rgba(255, 255, 255, 1) 50%
+  ); /* White background for login page */
   height: 100vh;
 }
 
@@ -94,7 +98,7 @@ body.login-page {
   }
   /*BUTTONS*/
   .button {
-    @apply bg-accent text-white font-karla-regular rounded-full px-4 py-3 uppercase hover:bg-darkAccent;
+    @apply bg-accent text-white font-karla-regular rounded-full px-4 lg:px-5 py-3 lg:py-4 uppercase hover:bg-darkAccent;
   }
   .button-filter {
     @apply bg-white text-accent font-karla-regular rounded-full px-4 py-3 m-2 uppercase;

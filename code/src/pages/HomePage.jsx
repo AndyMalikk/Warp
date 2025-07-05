@@ -9,6 +9,7 @@ import TextSection from "../components/TextSection";
 import Card from "../components/Card";
 import FAQ from "../components/FAQ";
 import { motion } from "framer-motion";
+import devicesVector from "/imgs/Devices-bro.png";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Hero
         subheading="Buďte vidět. Buďte online."
         heading="Moderní webové stránky na míru."
+        img={devicesVector}
       />
       <Intro />
       <PortfolioShowcase

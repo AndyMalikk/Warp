@@ -6,10 +6,7 @@ const Website = ({ website }) => {
   return (
     <>
       <motion.div layout>
-        <a
-          href={website.link}
-          target="_BLANK"
-        >
+        <a href={website.link} target="_BLANK">
           <h2 className="paragraph-white">{website.title}</h2>
           <img
             src={website.src}
