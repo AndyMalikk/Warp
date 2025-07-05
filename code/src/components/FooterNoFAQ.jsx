@@ -90,7 +90,8 @@ const FooterNoFAQ = () => {
       },
     }),
   };
-
+  // Získá aktuální rok
+  const currentYear = new Date().getFullYear();
   return (
     <>
       {/*Form contacts section*/}
@@ -98,10 +99,7 @@ const FooterNoFAQ = () => {
         {/*FORM*/}
         <div className="mb-16 md:w-1/3 lg:w-2/3">
           <form onSubmit={handleSubmit}>
-            <label
-              htmlFor="name"
-              className="paragraph text-white"
-            >
+            <label htmlFor="name" className="paragraph text-white">
               Jméno
             </label>
             <br />
@@ -115,10 +113,7 @@ const FooterNoFAQ = () => {
               className="form-input mb-4"
             />
             <br />
-            <label
-              htmlFor="email"
-              className="paragraph text-white"
-            >
+            <label htmlFor="email" className="paragraph text-white">
               Email
             </label>
             <br />
@@ -143,10 +138,7 @@ const FooterNoFAQ = () => {
               placeholder="Typ projektu"
             />
             <br />
-            <label
-              htmlFor="message"
-              className="paragraph text-white"
-            >
+            <label htmlFor="message" className="paragraph text-white">
               Popište váš projekt
             </label>
             <br />
@@ -163,10 +155,7 @@ const FooterNoFAQ = () => {
             />
             <br />
             <br />
-            <Button
-              label="Odeslat"
-              className="button"
-            />
+            <Button label="Odeslat" className="button" />
           </form>
         </div>
 
@@ -179,9 +168,11 @@ const FooterNoFAQ = () => {
               alt="email icon"
               className="w-[28px] h-[28px]"
             />
-            <p className="paragraph text-white">info@warp.cz</p>
+            <p className="paragraph text-white">info@warpweb.cz</p>
           </div>
-          <p className="heading2 mt-8 md:mt-36 max-w-[300px]">Pojďme společně posílit váš byznys</p>
+          <p className="heading2 mt-8 md:mt-36 max-w-[300px]">
+            Pojďme společně posílit váš byznys
+          </p>
         </div>
       </div>
 
@@ -192,7 +183,7 @@ const FooterNoFAQ = () => {
           alt="warp logo"
           className="w-[125px] h-auto py-8"
         />
-        <ul className="nav-text text-white flex gap-4 mb-4">
+        <ul className="nav-text text-white flex gap-4 mb-8">
           <li>
             <Link to="/o-mne">O mně</Link>
           </li>
@@ -206,6 +197,7 @@ const FooterNoFAQ = () => {
             <Link to="/kontakty">Kontakty</Link>
           </li>
         </ul>
+        {/*}
         <ul className="flex gap-4 mb-4">
           <li>
             <a href="#">
@@ -226,7 +218,8 @@ const FooterNoFAQ = () => {
             </a>
           </li>
         </ul>
-        <p className="paragraph text-white pb-4">© 2025 Warp</p>
+        */}
+        <p className="paragraph text-white pb-4">© {currentYear} Warp</p>
       </div>
     </>
   );

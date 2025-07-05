@@ -90,7 +90,7 @@ const Footer = () => {
       },
     }),
   };
-
+  const currentYear = new Date().getFullYear();
   return (
     <>
       {/*FAQ SECTION*/}
@@ -193,7 +193,7 @@ const Footer = () => {
               alt="email icon"
               className="w-[28px] h-[28px]"
             />
-            <p className="paragraph text-white">info@warp.cz</p>
+            <p className="paragraph text-white">info@warpweb.cz</p>
           </div>
           <p className="heading2 mt-8 md:mt-36 max-w-[300px]">
             Pojďme společně posílit váš byznys
@@ -208,7 +208,7 @@ const Footer = () => {
           alt="warp logo"
           className="w-[125px] h-auto py-8"
         />
-        <ul className="nav-text text-white flex gap-4 mb-4">
+        <ul className="nav-text text-white flex gap-4 mb-8">
           <li>
             <Link to="/o-mne">O mně</Link>
           </li>
@@ -222,7 +222,7 @@ const Footer = () => {
             <Link to="/kontakty">Kontakty</Link>
           </li>
         </ul>
-        <ul className="flex gap-4 mb-4">
+        {/*<ul className="flex gap-4 mb-4">
           <li>
             <a href="#">
               <img
@@ -242,7 +242,8 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <p className="paragraph text-white pb-4">© 2025 Warp</p>
+        */}
+        <p className="paragraph text-white pb-4">© {currentYear} Warp</p>
       </div>
     </>
   );
