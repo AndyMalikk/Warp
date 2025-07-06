@@ -15,16 +15,13 @@ const Navbar = () => {
       {/*SIDEBAR*/}
       <ul
         id="sidebar"
-        className={`fixed top-0 right-0 h-[100vh] w-full sm:w-[350px] z-50 bg-black-blur shadow-sm nav-text flex-col items-start justify-start backdrop-blur-md
+        className={`fixed top-0 right-0 h-[100vh] w-full sm:w-[350px] z-50 bg-black-blur shadow-sm nav-text flex-col items-end justify-start backdrop-blur-md
         ${
           /*IF sidebarVisible = true the sidebar becomes visible*/
           sidebarVisible ? "flex" : "hidden"
         }`}
       >
-        <li
-          onClick={toggleSideBar}
-          className="h-[75px] mr-auto"
-        >
+        <li onClick={toggleSideBar} className="h-[75px]">
           <div className="nav-a">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,88 +35,51 @@ const Navbar = () => {
           </div>
         </li>
         <li className="h-[75px]">
-          <Link
-            to="/o-mne"
-            className="nav-a"
-          >
+          <Link to="/o-mne" className="nav-a">
             O mně
           </Link>
         </li>
         <li className="h-[75px] w-full">
-          <Link
-            to="/portfolio"
-            className="nav-a"
-          >
+          <Link to="/portfolio" className="nav-a">
             Portfolio
           </Link>
         </li>
         <li className="h-[75px] w-full">
-          <Link
-            to="/sluzby"
-            className="nav-a"
-          >
+          <Link to="/sluzby" className="nav-a">
             Služby
           </Link>
         </li>
         <li className="h-[75px]">
-          <Link
-            to="/kontakty"
-            className="nav-a"
-          >
-            <Button
-              label="Kontaktovat"
-              className="button"
-            />
+          <Link to="/kontakty" className="nav-a">
+            <Button label="Kontaktovat" className="button" />
           </Link>
         </li>
       </ul>
       {/*DESKTOP*/}
       <ul className="nav-text w-full sticky top-0 h-[75px] list-none flex justify-end items-center page-width mt-2">
         <li className=" mr-auto">
-          <Link
-            to="/"
-            className="nav-a"
-          >
-            <img
-              src="./imgs/warp-logo.png"
-              alt="Warp logo"
-              className="logo"
-            />
+          <Link to="/" className="nav-a">
+            <img src="./imgs/warp-logo.png" alt="Warp logo" className="logo" />
           </Link>
         </li>
         <li className=" nav-li">
-          <Link
-            to="/o-mne"
-            className="nav-a"
-          >
+          <Link to="/o-mne" className="nav-a">
             O mně
           </Link>
         </li>
         <li className="nav-li">
-          <Link
-            to="/portfolio"
-            className="nav-a"
-          >
+          <Link to="/portfolio" className="nav-a">
             Portfolio
           </Link>
         </li>
         <li className=" nav-li">
-          <Link
-            to="/sluzby"
-            className="nav-a"
-          >
+          <Link to="/sluzby" className="nav-a">
             Služby
           </Link>
         </li>
         <li className=" nav-li">
-          <Link
-            to="/kontakty"
-            className="nav-a"
-          >
-            <Button
-              label="Kontaktovat"
-              className="button"
-            />
+          <Link to="/kontakty" className="nav-a">
+            <Button label="Kontaktovat" className="button" />
           </Link>
         </li>
         <li onClick={toggleSideBar}>

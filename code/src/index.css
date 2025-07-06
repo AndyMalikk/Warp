@@ -73,7 +73,7 @@ body.login-page {
     @apply text-white text-4xl font-inter-medium capitalize md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl;
   }
   .heading {
-    @apply text-accent text-2xl font-inter-medium lg:text-4xl xl:text-5xl;
+    @apply text-accent text-3xl font-inter-medium lg:text-4xl xl:text-5xl;
   }
   .heading-white {
     @apply text-white text-2xl font-inter-medium lg:text-4xl xl:text-5xl;
@@ -136,7 +136,7 @@ body.login-page {
     @apply text-white capitalize text-sm font-montserrat-medium;
   }
   .nav-a {
-    @apply h-[100%] px-[16px] flex items-center cursor-pointer; /* FIX THE PADDING */
+    @apply h-[100%] px-[16px] flex items-center justify-end  cursor-pointer; /* FIX THE PADDING */
   }
   .nav-li {
     @apply hidden lg:flex;

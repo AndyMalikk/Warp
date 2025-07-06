@@ -1,23 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react"; // Přidáno useRef
 import Button from "./Button";
-import Select from "react-select";
-import FAQ from "./FAQ";
+import emailjs from "@emailjs/browser"; // Import EmailJS
 import { Link } from "react-router-dom";
 
 const FooterNoFAQ = () => {
-  /* OPTIONS FOR FORM SELECT */
-  const options = [
-    { value: "ui/ux-design", label: "UI/UX Design" },
-    { value: "web-development", label: "Web Development" },
-  ];
+  // /* OPTIONS FOR FORM SELECT */ - Odstraněno, už se nepoužívá
+  // const options = [
+  //   { value: "ui/ux-design", label: "UI/UX Design" },
+  //   { value: "web-development", label: "Web Development" },
+  // ];
 
-  // State to store form data
+  // Použij useRef pro referenci k formuláři
+  const form = useRef();
+
+  // State to store form data (selectedOptions odstraněno)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-    selectedOptions: [],
   });
+
+  // Přidány stavy pro odesílání a zpětnou vazbu
+  const [isSending, setIsSending] = useState(false);
+  const [sendSuccess, setSendSuccess] = useState(null); // null: výchozí, true: úspěch, false: chyba
 
   // Handle input change
   const handleChange = (e) => {
@@ -28,79 +33,79 @@ const FooterNoFAQ = () => {
     });
   };
 
-  // Handle Select input change
-  const handleSelectChange = (selectedOptions) => {
-    setFormData({
-      ...formData,
-      selectedOptions,
-    });
-  };
+  // Handle Select input change - Odstraněno, už se nepoužívá
+  // const handleSelectChange = (selectedOptions) => {
+  //   setFormData({
+  //     ...formData,
+  //     selectedOptions,
+  //   });
+  // };
 
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData); // Log form data to the console
+
+    // Validace všech 3 povinných polí
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Prosím, vyplňte všechna povinná pole."); // Základní alert
+      // Můžeš zde implementovat sofistikovanější zobrazení chyb pro lepší UX
+      return; // Zastaví odeslání, pokud nejsou všechna pole vyplněna
+    }
+
+    setIsSending(true); // Nastav, že se odesílá
+    setSendSuccess(null); // Resetuj stav úspěchu
+
+    // Příprava dat pro EmailJS - už jen 3 pole
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID", // <--- NAHRADIT SVÝM SERVICE ID Z EMAILJS
+        "YOUR_TEMPLATE_ID", // <--- NAHRADIT SVÝM TEMPLATE ID Z EMAILJS
+        templateParams,
+        "YOUR_PUBLIC_KEY" // <--- NAHRADIT SVÝM PUBLIC KEY (USER ID) Z EMAILJS
+      )
+      .then(
+        (result) => {
+          console.log("EmailJS Success:", result.text);
+          setSendSuccess(true); // Nastav úspěch
+          setIsSending(false); // Ukonči stav odesílání
+          // Vyčistit formulář po úspěšném odeslání
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("EmailJS Error:", error.text);
+          setSendSuccess(false); // Nastav chybu
+          setIsSending(false); // Ukonči stav odesílání
+        }
+      );
   };
 
-  // Custom styles for Select component
-  const colorStyles = {
-    control: (styles) => ({
-      ...styles,
-      backgroundColor: "transparent",
-      border: "none",
-      borderBottom: "1px solid rgba(107, 114, 128, 1)", // Only bottom border in gray
-      boxShadow: "none",
-      borderRadius: 0,
-      paddingTop: "8px",
-      paddingLeft: 0, // Remove any left padding
-      fontFamily: "karla-regular, sans-serif",
-      fontSize: "18px",
-      "&:hover": {
-        borderBottom: "1px solid rgba(107, 114, 128, 1)", // Slightly thicker border on hover
-      },
-    }),
-    placeholder: (styles) => ({
-      ...styles,
-      color: "#ffffff",
-      fontStyle: "normal",
-      fontFamily: "karla-regular, sans-serif",
-      fontSize: "18px",
-      paddingLeft: 0,
-      paddingBottom: 3,
-      marginLeft: -6,
-    }),
-    menu: (styles) => ({
-      ...styles,
-      backgroundColor: "#161519",
-      marginTop: 0,
-      borderRadius: 0,
-      border: "none",
-      fontFamily: "karla-regular, sans-serif",
-      fontSize: "18px",
-    }),
-    option: (styles, state) => ({
-      ...styles,
-      backgroundColor: state.isSelected ? "#333" : "#161519",
-      color: state.isSelected ? "#fff" : "#ccc",
-      fontFamily: "karla-regular, sans-serif",
-      fontSize: "18px",
-      "&:hover": {
-        backgroundColor: "#333",
-        color: "#fff",
-      },
-    }),
-  };
+  // Custom styles for Select component - Odstraněno, už se nepoužívá
+  // const colorStyles = { ... };
+
   // Získá aktuální rok
   const currentYear = new Date().getFullYear();
+
   return (
     <>
       {/*Form contacts section*/}
       <div className="flex flex-col p-4 page-width md:flex-row md:justify-around md:gap-24">
         {/*FORM*/}
         <div className="mb-16 md:w-1/3 lg:w-2/3">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} ref={form}>
+            {" "}
+            {/* Přidána ref */}
             <label htmlFor="name" className="paragraph text-white">
-              Jméno
+              Jméno *
             </label>
             <br />
             <input
@@ -110,11 +115,13 @@ const FooterNoFAQ = () => {
               placeholder=""
               value={formData.name}
               onChange={handleChange}
-              className="form-input mb-4"
+              className="form-input mb-8"
+              autoComplete="off" // Přidáno pro zamezení autofill
+              required // Přidáno pro povinné pole
             />
             <br />
             <label htmlFor="email" className="paragraph text-white">
-              Email
+              Email *
             </label>
             <br />
             <input
@@ -124,22 +131,15 @@ const FooterNoFAQ = () => {
               placeholder=""
               value={formData.email}
               onChange={handleChange}
-              className="form-input mb-4"
+              className="form-input mb-8"
+              autoComplete="off" // Přidáno pro zamezení autofill
+              required // Přidáno pro povinné pole
             />
             <br />
-            {/*DROPDOWN SELECT*/}
-
-            <Select
-              options={options}
-              value={formData.selectedOptions}
-              onChange={handleSelectChange}
-              isMulti
-              styles={colorStyles}
-              placeholder="Typ projektu"
-            />
-            <br />
+            {/*DROPDOWN SELECT - Odstraněno, už se nepoužívá*/}
+            {/* Původní Select komponenta byla zakomentována, nyní je odstraněna z kódu */}
             <label htmlFor="message" className="paragraph text-white">
-              Popište váš projekt
+              Zpráva *
             </label>
             <br />
             <textarea
@@ -152,10 +152,27 @@ const FooterNoFAQ = () => {
               onChange={handleChange}
               wrap="soft"
               className="form-input h-16 resize-none overflow-auto text-start"
+              autoComplete="off" // Přidáno pro zamezení autofill
+              required // Přidáno pro povinné pole
             />
             <br />
             <br />
-            <Button label="Odeslat" className="button" />
+            <Button
+              label={isSending ? "Odesílám..." : "Odeslat"} // Dynamický text tlačítka
+              className="button"
+              disabled={isSending} // Zakáže tlačítko během odesílání
+            />
+            {/* Zprávy o stavu odesílání */}
+            {sendSuccess === true && (
+              <p className="text-green-500 mt-4">
+                Zpráva byla úspěšně odeslána!
+              </p>
+            )}
+            {sendSuccess === false && (
+              <p className="text-red-500 mt-4">
+                Nastala chyba při odesílání zprávy. Zkuste to prosím znovu.
+              </p>
+            )}
           </form>
         </div>
 
@@ -170,7 +187,7 @@ const FooterNoFAQ = () => {
             />
             <p className="paragraph text-white">info@warpweb.cz</p>
           </div>
-          <p className="heading2 mt-8 md:mt-36 max-w-[300px]">
+          <p className="heading2 mt-8 md:mt-24 max-w-[300px]">
             Pojďme společně posílit váš byznys
           </p>
         </div>
@@ -197,7 +214,7 @@ const FooterNoFAQ = () => {
             <Link to="/kontakty">Kontakty</Link>
           </li>
         </ul>
-        {/*}
+        {/*
         <ul className="flex gap-4 mb-4">
           <li>
             <a href="#">
