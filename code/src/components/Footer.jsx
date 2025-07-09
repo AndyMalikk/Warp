@@ -66,10 +66,10 @@ const Footer = () => {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // <--- NAHRADIT SVÝM SERVICE ID Z EMAILJS
-        "YOUR_TEMPLATE_ID", // <--- NAHRADIT SVÝM TEMPLATE ID Z EMAILJS
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Použití proměnné prostředí
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
-        "YOUR_PUBLIC_KEY" // <--- NAHRADIT SVÝM PUBLIC KEY (USER ID) Z EMAILJS
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {

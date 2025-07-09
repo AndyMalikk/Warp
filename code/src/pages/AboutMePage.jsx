@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import reviewImg from "/public/imgs/EmptyIMG.jpg";
 import aboutme from "/public/imgs/aboutme2.png";
 import aboutMeVector from "/imgs/About-me-bro.png";
+import FeatureCard from "../components/FeatureCard";
 
 const container = {
   hidden: { opacity: 0, y: 50 },
@@ -121,17 +122,5 @@ const AboutMePage = () => {
     </>
   );
 };
-
-// Feature card component with animation
-const FeatureCard = ({ icon, title, description }) => (
-  <motion.div
-    variants={item}
-    className=" p-8 rounded-2xl shadow-xl text-center hover:scale-105 transition-transform"
-  >
-    <div className="text-accent mb-6 flex justify-center">{icon}</div>
-    <h4 className="heading2 mb-4">{title}</h4>
-    <p className="paragraph-white">{description}</p>
-  </motion.div>
-);
 
 export default AboutMePage;

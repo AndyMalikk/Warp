@@ -58,8 +58,8 @@ const Portfolio = () => {
       />
       {/*portfolio cards */}
       <motion.div
-        layout //motion animation method
-        className="grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] gap-x-4 gap-y-8 page-width px-4 mb-16 lg:mb-40"
+        layout
+        className="grid grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] sm:grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] gap-x-4 gap-y-8 page-width px-4 mb-16 lg:mb-40"
       >
         {/* displays all websites from the filtered state */}
         {filtered.map((website) => {

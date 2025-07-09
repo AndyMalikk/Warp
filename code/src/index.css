@@ -98,13 +98,13 @@ body.login-page {
   }
   /*BUTTONS*/
   .button {
-    @apply bg-accent text-white font-karla-regular rounded-full px-4 lg:px-5 py-3 lg:py-4 uppercase hover:bg-darkAccent;
+    @apply bg-accent text-white font-karla-regular rounded-full px-3 md:px-4 lg:px-5 py-2 md:py-3 lg:py-4 uppercase hover:bg-darkAccent;
   }
   .button-filter {
-    @apply bg-white text-accent font-karla-regular rounded-full px-4 py-3 m-2 uppercase;
+    @apply bg-white text-accent font-karla-regular rounded-full px-3 md:px-4 lg:px-5 py-2 md:py-3 lg:py-4 m-2 uppercase;
   }
   .button-filter-active {
-    @apply bg-accent text-white font-karla-regular rounded-full px-4 py-3 mx-2 uppercase;
+    @apply bg-accent text-white font-karla-regular rounded-full px-3 md:px-4 lg:px-5 py-2 md:py-3 lg:py-4 mx-2 uppercase;
   }
   .login-button {
     @apply bg-accent text-black font-karla-regular rounded-full px-4 py-2 hover:bg-darkAccent;

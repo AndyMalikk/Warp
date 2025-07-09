@@ -10,7 +10,22 @@ import Card from "../components/Card";
 import FAQ from "../components/FAQ";
 import { motion } from "framer-motion";
 import devicesVector from "/imgs/Devices-bro.png";
+import FeatureCard from "../components/FeatureCard";
+import { FaRocket, FaMobile, FaBolt } from "react-icons/fa";
 
+const container = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.25,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+};
 const HomePage = () => {
   return (
     <>
@@ -20,7 +35,34 @@ const HomePage = () => {
         heading="Moderní webové stránky na míru."
         img={devicesVector}
       />
+
       <Intro />
+      <motion.section
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-40 lg:mb-60 px-4"
+      >
+        <div className="page-width grid md:grid-cols-3 gap-10">
+          <FeatureCard
+            icon={<FaMobile size={40} />}
+            title="Responzivní design"
+            description="Váš web bude vypadat dobře na počítačích, tabletech i telefonech."
+          />
+          <FeatureCard
+            icon={<FaBolt size={40} />}
+            title="Optimalizace"
+            description="Bleskově rychlé načítaní webu pro skvělý uživatelský zážitek."
+          />
+          <FeatureCard
+            icon={<FaRocket size={40} />}
+            title="SEO"
+            description="Pomáha vašemu webu být vidět při vyhledávání."
+          />
+        </div>
+      </motion.section>
+
       <PortfolioShowcase
         items={[
           { src: "./imgs/PenzionKytlice.png", alt: "Web penzionu Kytlice" },

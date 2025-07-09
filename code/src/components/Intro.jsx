@@ -35,10 +35,13 @@ const Intro = () => {
         <h3 className="text-white paragraph mb-4">Co dělám?</h3>
         <h2 className="heading mb-8">Webové stránky na zakázku</h2>
         <p className="paragraph text-white max-w-[600px] mb-8">
-          Warp je česká digitální agentura, která pomáhá firmám vyniknout
-          online. <br />
-          Vytvářím klientům webové stránky, které nejen že dobře vypadají, ale
-          také jim dávají na trhu výhodu.
+          Tvořím cenově dostupné a moderní webové stránky, které vám pomohou
+          uspět online.
+          <br />
+          Váš web je dnes pro podnikání zásadní. Dělám weby, které dělají dobrý
+          první dojem a získávají důvěru lidí i prohlížečů. S kvalitním designem
+          a nastavením pro vyhledávače získáte náskok, který vaše podnikání
+          posune dopředu.
         </p>
         <Link to="/kontakty">
           <Button label="Chci web" className="button" />
