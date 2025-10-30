@@ -1,4 +1,4 @@
-=# Warp – Web Showcase
+# Warp – Web Showcase
 
 ## 1. Introduction  
 Welcome to the documentation for **Warp** – a personal website built to present my work, capabilities, and approach to modern web design and development.  
